@@ -23,7 +23,7 @@ public class Configuration {
     public static int[] Color3(int[] Color1) {
         int[] Color3 = new int[3];
         int brillo = (int) (0.2126 * Color1[0] + 0.7152 * Color1[1] + 0.0722 * Color1[2]);
-        int diferencia = 10;
+        int diferencia = 20;
 
         if (brillo > 128) {
             Color3[0] = Math.max(Color1[0] - diferencia, 0);
