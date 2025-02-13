@@ -6,9 +6,9 @@ Todos los componentes pueden ser configurados y personalizados mediante los mét
 
 Además, algunos comportamientos interactivos están integrados:
 
-- **Efecto de hover (pasar el ratón)**: Este efecto está disponible para las tablas. Cuando el ratón pasa sobre una fila de la tabla, el fondo de esa fila cambia al **color complementario** para resaltar visualmente la fila sobre la que el usuario está interactuando.
+- **Efecto de hover (pasar el ratón)**: Este efecto está disponible para las tablas y para los items de los ComboBox. Cuando el ratón pasa sobre una fila de la tabla y los items del ComboBox, el fondo de esa fila cambia al **color complementario** para resaltar visualmente la fila sobre la que el usuario está interactuando.
 
-- **Efecto al presionar**: Este comportamiento está disponible tanto para los botones como para las filas de la tabla y para los items de los ComboBox. Cuando se **presiona un botón** o **se hace clic en una fila de la tabla**, el fondo de ese componente se cambia automáticamente al **color complementario**, proporcionando una retroalimentación visual clara para el usuario.
+- **Efecto al presionar**: Este comportamiento está disponible tanto para los botones como para las filas de la tabla. Cuando se **presiona un botón** o **se hace clic en una fila de la tabla**, el fondo de ese componente se cambia automáticamente al **color complementario**, proporcionando una retroalimentación visual clara para el usuario.
 
 Además, en cuanto al color del texto (foreground), el sistema realiza una conversión de los valores RGB a HSL (Hue, Saturation, Lightness) para determinar el nivel de **brillo** del color. Según el valor de luminosidad, el sistema selecciona automáticamente el color de texto adecuado: **blanco** o **negro**, asegurando un buen contraste y legibilidad en cualquier fondo.
 
@@ -316,12 +316,24 @@ GlobalStyle global = new GlobalStyle();
 **2. Configuración del ComboBox**
 
 ```java
-// Aplica el estilo al Slider, pasando los parámetros necesarios
+// Aplica el estilo al ComboBox, pasando los parámetros necesarios
 global.ComboBox().style(JComboBox);
 ```
 
 **(Opcional) Cambia el color**
 
 ```java
-global.Slider().ColorSet(R, G, B);
+global.ComboBox().ColorSet(R, G, B);
 ```
+
+## TextPanel (text/html)
+
+### Requisitos para usarlo
+
+Para usar este diseño, necesitas:
+- Un `JTextPanel`
+- Que el JTextPanel este configurado para renderizar HTML
+
+### Forma de uso
+
+#### Pasos:

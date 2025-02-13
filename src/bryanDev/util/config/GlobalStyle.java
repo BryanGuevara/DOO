@@ -2,7 +2,7 @@ package bryanDev.util.config;
 
 public class GlobalStyle {
 
-    public static int[] Color1 = {0,56, 56};
+    public static int[] Color1 = {56,56, 56};
     public static int[] Color2 = Configuration.Color2(Color1);
     public static int[] Color3 = Configuration.Color3(Color1);
     public static int[] Color4 = Configuration.Color4(Color1);
