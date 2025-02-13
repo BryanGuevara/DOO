@@ -1,14 +1,14 @@
-# DOO (**D**iseño **O**rientado a **O**bjetos) 
+# DOO
 
-Este proyecto ofrece un conjunto de diseños predeterminados que se pueden aplicar de manera uniforme en todos tus proyectos, asegurando una apariencia estética consistente. Los estilos cubren una amplia variedad de componentes visuales (como tablas, botones, campos de texto, etc.), y el color predeterminado para estos elementos es RGB(56, 56, 56). 
+**DOO** (**D**iseño **O**rientado a **O**bjetos) ofrece un conjunto de diseños predeterminados que se pueden aplicar de manera uniforme en todos tus proyectos, asegurando una apariencia estética consistente. Los estilos cubren una amplia variedad de componentes visuales (como tablas, botones, campos de texto, etc.), y el color predeterminado para estos elementos es RGB(56, 56, 56). 
 
 Todos los componentes pueden ser configurados y personalizados mediante los métodos `style()` y `colorSet()`.
 
 Además, algunos comportamientos interactivos están integrados:
 
-- **Efecto de hover (pasar el ratón)**: Este efecto está disponible únicamente para las tablas. Cuando el ratón pasa sobre una fila de la tabla, el fondo de esa fila cambia al **color complementario** para resaltar visualmente la fila sobre la que el usuario está interactuando.
+- **Efecto de hover (pasar el ratón)**: Este efecto está disponible para las tablas. Cuando el ratón pasa sobre una fila de la tabla, el fondo de esa fila cambia al **color complementario** para resaltar visualmente la fila sobre la que el usuario está interactuando.
 
-- **Efecto al presionar**: Este comportamiento está disponible tanto para los botones como para las filas de la tabla. Cuando se **presiona un botón** o **se hace clic en una fila de la tabla**, el fondo de ese componente se cambia automáticamente al **color complementario**, proporcionando una retroalimentación visual clara para el usuario.
+- **Efecto al presionar**: Este comportamiento está disponible tanto para los botones como para las filas de la tabla y para los items de los ComboBox. Cuando se **presiona un botón** o **se hace clic en una fila de la tabla**, el fondo de ese componente se cambia automáticamente al **color complementario**, proporcionando una retroalimentación visual clara para el usuario.
 
 Además, en cuanto al color del texto (foreground), el sistema realiza una conversión de los valores RGB a HSL (Hue, Saturation, Lightness) para determinar el nivel de **brillo** del color. Según el valor de luminosidad, el sistema selecciona automáticamente el color de texto adecuado: **blanco** o **negro**, asegurando un buen contraste y legibilidad en cualquier fondo.
 
@@ -78,7 +78,7 @@ global.Table().ColorSet(R, G, B);
 
 ## Button
 
-- Nuevo diseño predeterminado para las tablas.
+- Nuevo diseño predeterminado para los botones.
 - Opción de personalizar el color.
 
 ### Requisitos para usarlo
@@ -100,13 +100,40 @@ Para usar este diseño, necesitas:
 GlobalStyle global = new GlobalStyle();
 ```
 
-**2. Configuración de la tabla**
+**2. Configuración del button**
 
 ```java
 // Aplica el estilo a la tabla, pasando los parámetros necesarios
 global.Button().style(JButton);
 ```
 
+#### Pasos (Opción de varios buttons):
+
+1. Crea una instancia de `GlobalStyle`
+2. crear un array de buttons
+2. Configura el boton
+
+**1. Crea una instancia de `GlobalStyle`**
+
+```java
+// Crea la instancia
+GlobalStyle global = new GlobalStyle();
+```
+
+**2. Crear un array con los buttons**
+
+```java
+ JButton[] botones = new JButton[]{
+            JButton1, JButton2, JButton3
+        };
+```
+
+**3. Configuración de los buttons**
+
+```java
+// Aplica el estilo a los buttons, pasando los parámetros necesarios
+global.Button().styleArray(botones);
+```
 
 **(Opcional) cambia el color**
 
@@ -253,7 +280,44 @@ GlobalStyle global = new GlobalStyle();
 
 ```java
 // Aplica el estilo al Slider, pasando los parámetros necesarios
-global.Slider().style(slider);
+global.Slider().style(JSlider);
+```
+
+**(Opcional) Cambia el color**
+
+```java
+global.Slider().ColorSet(R, G, B);
+```
+
+## ComboBox
+
+- Nuevo diseño predeterminado para los ComboBox.
+- Opción de personalizar el color.
+
+### Requisitos para usarlo
+
+Para usar este diseño, necesitas:
+- Un `JComboBox`
+
+### Forma de uso
+
+#### Pasos:
+
+1. Crea una instancia de `GlobalStyle`
+2. Configura el ComboBox
+
+**1. Crea una instancia de `GlobalStyle`**
+
+```java
+// Crea la instancia
+GlobalStyle global = new GlobalStyle();
+```
+
+**2. Configuración del ComboBox**
+
+```java
+// Aplica el estilo al Slider, pasando los parámetros necesarios
+global.ComboBox().style(JComboBox);
 ```
 
 **(Opcional) Cambia el color**

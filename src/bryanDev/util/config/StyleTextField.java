@@ -10,12 +10,12 @@ public class StyleTextField {
 
     public void style(JTextField TextField) {
 
-        int Fuente = (TextField.getHeight() * TextField.getWidth()) / 350;
+        final int fontSize = Configuration.fontHeight(TextField.getWidth(), TextField.getHeight(), TextField.getText().length());
 
         TextField.setBackground(new Color(backgroundColor[0], backgroundColor[1], backgroundColor[2]));
         TextField.setForeground(new Color(foregroundColor[0], foregroundColor[1], foregroundColor[2]));
         TextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        TextField.setFont(new java.awt.Font("Arial Black", 1, Fuente));
+        TextField.setFont(new java.awt.Font("Arial Black", 1, fontSize));
     }
 
     public void ColorSet(int R, int G, int B) {

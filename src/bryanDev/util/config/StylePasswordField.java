@@ -10,12 +10,12 @@ public class StylePasswordField {
 
     public void style(JPasswordField passwordField) {
 
-       int Fuente = (passwordField.getHeight()*passwordField.getWidth()) /350;
+        final int fontSize = Configuration.fontHeight(passwordField.getWidth(), passwordField.getHeight(), passwordField.getText().length());
 
         passwordField.setBackground(new Color(backgroundColor[0], backgroundColor[1], backgroundColor[2]));
         passwordField.setForeground(new Color(foregroundColor[0], foregroundColor[1], foregroundColor[2]));
         passwordField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        passwordField.setFont(new java.awt.Font("Arial Black", 1, Fuente));
+        passwordField.setFont(new java.awt.Font("Arial Black", 1, fontSize));
     }
 
      public void ColorSet(int R, int G, int B) {

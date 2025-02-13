@@ -2,11 +2,13 @@ package bryanDev.util.config;
 
 public class GlobalStyle {
 
-    public static int[] Color1 = {0,0,20};
+    public static int[] Color1 = {0,56, 56};
     public static int[] Color2 = Configuration.Color2(Color1);
     public static int[] Color3 = Configuration.Color3(Color1);
     public static int[] Color4 = Configuration.Color4(Color1);
     public static int[] Color5 = Configuration.Color5(Color1);
+    public static int[] Color6 = Configuration.Color6(Color1);
+    public static int[] Color7 = Configuration.Color7(Color4);
 
     private final StyleTable styleTable;
     private final StyleButton styleButton;
@@ -15,6 +17,8 @@ public class GlobalStyle {
     private final StyleFrame styleFrame;
     private final StyleTextArea styleTextArea;
     private final StyleSlider styleSlider;
+    private final StyleComboBox styleComboBox;
+    private final StylePanel stylePanel;
 
     public GlobalStyle() {
         this.styleTable = new StyleTable();
@@ -24,6 +28,8 @@ public class GlobalStyle {
         this.styleFrame = new StyleFrame();
         this.styleTextArea = new StyleTextArea();
         this.styleSlider = new StyleSlider();
+        this.styleComboBox = new StyleComboBox();
+        this.stylePanel = new StylePanel();
     }
 
     public StyleTable Table() {
@@ -49,9 +55,17 @@ public class GlobalStyle {
     public StyleTextArea TextArea() {
         return styleTextArea;
     }
-    
-     public StyleSlider Slider() {
+
+    public StyleSlider Slider() {
         return styleSlider;
+    }
+
+    public StyleComboBox ComboBox() {
+        return styleComboBox;
+    }
+
+    public StylePanel Panel() {
+        return stylePanel;
     }
 
     private static GlobalStyle instance;

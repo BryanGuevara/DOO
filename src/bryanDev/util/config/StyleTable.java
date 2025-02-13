@@ -36,7 +36,6 @@ public class StyleTable {
         table.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 14));
         table.setForeground(new java.awt.Color(foregroundColor[0], foregroundColor[1], foregroundColor[2]));
         table.setGridColor(new java.awt.Color(Selected[0], Selected[1], Selected[2]));
-        table.setRowHeight(30);
         table.setSelectionBackground(new java.awt.Color(Selected[0], Selected[1], Selected[2]));
         table.setSelectionForeground(new java.awt.Color(foregroundColor[0], foregroundColor[1], foregroundColor[2]));
         table.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -91,8 +90,7 @@ public class StyleTable {
                 textArea.setWrapStyleWord(true);
                 textArea.setOpaque(true);
                 textArea.setEditable(false);
-                textArea.setFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
-                textArea.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+                textArea.setFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 13));
             }
 
             @Override
@@ -129,6 +127,7 @@ public class StyleTable {
                     textArea.setForeground(new Color(255 - foregroundColor[0], 255 - foregroundColor[1], 255 - foregroundColor[2]));
                 }
 
+                textArea.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
                 return textArea;
             }
         }
