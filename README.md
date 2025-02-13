@@ -12,6 +12,39 @@ Además, algunos comportamientos interactivos están integrados:
 
 Además, en cuanto al color del texto (foreground), el sistema realiza una conversión de los valores RGB a HSL (Hue, Saturation, Lightness) para determinar el nivel de **brillo** del color. Según el valor de luminosidad, el sistema selecciona automáticamente el color de texto adecuado: **blanco** o **negro**, asegurando un buen contraste y legibilidad en cualquier fondo.
 
+## Frame
+
+- Bloquedo del redimencionado.
+- Aparece en el centro de la pantalla.
+- Icono personalizado.
+- Titulo personalizado
+
+### Requisitos para usarlo
+
+Para usar este diseño, necesitas:
+- Un `jFrame`
+
+### Forma de uso
+
+#### Pasos:
+
+1. Crea una instancia de `GlobalStyle`
+2. Configura el frame
+
+**1. Crea una instancia de `GlobalStyle`**
+
+```java
+// Crea la instancia
+GlobalStyle global = new GlobalStyle();
+```
+
+**2. Configuración del frame**
+
+```java
+// Aplica el estilo a la tabla, pasando los parámetros necesarios, un this para marcarle que es el frame usado actualmente, el nombre del frame para el titlulo, la ruta de el icono a usar
+global.Frame().configureFrame(this, "Pagina Principal", "src/img/icono.png");
+```
+
 ## Table
 
 - Nuevo diseño predeterminado para las tablas.
