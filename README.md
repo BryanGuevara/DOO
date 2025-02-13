@@ -328,12 +328,54 @@ global.ComboBox().ColorSet(R, G, B);
 
 ## TextPanel (text/html)
 
+- Diseño **CSS** ya preestablecido en **modo obscuro**
+
 ### Requisitos para usarlo
 
 Para usar este diseño, necesitas:
 - Un `JTextPanel`
-- Que el JTextPanel este configurado para renderizar HTML
+- Que el JTextPanel este configurado para renderizar **HTML**
 
 ### Forma de uso
 
 #### Pasos:
+
+1. Crea una instancia de `GlobalStyle`
+2. Configura el TextPanel
+**1. Crea una instancia de `GlobalStyle`**
+
+```java
+// Crea la instancia
+GlobalStyle global = new GlobalStyle();
+```
+
+**2 v1. Configuración del TextPanel (si escribes desde el edior grafico)**
+
+```java
+// Aplica el estilo al TextPanel, aplicando un setText y concatenando lo ya escrito al final
+jTextPanel.setText(global.Panel().CSS() + jTextPanel.getText());
+```
+
+
+**2 v2. Configuración del TextPanel (si escribes desde el codigo)**
+
+```java
+// Crea tu String con el Html que usaras
+String text = "<h1>Hola mundo</h1>"
+
+// Aplica el estilo al TextPanel, aplicando un setText
+jTextPanel.setText(global.Panel().CSS());
+
+// Ahora pon el setText con tu String que contiene el html
+jTextPanel.setText(text);
+```
+
+**2 v2.5. Configuración del TextPanel**
+
+```java
+// Crea tu String con el Html que usaras
+String text = "<h1>Hola mundo</h1>"
+
+// Aplica el estilo al TextPanel, aplicando un setText concatenando tu String que contiene el html
+jTextPanel.setText(global.Panel().CSS() + text);
+```
